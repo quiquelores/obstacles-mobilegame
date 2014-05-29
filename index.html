@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<script type="text/javascript" src="./coquette-min.js"></script>
+		<script type="text/javascript" src="./jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="./game.js"></script>
+		
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+		
+		<script> 		//pause/unpause game on pagechange
+		$(document).on("pagechange", function(event) {
+					console.log("pagechange");
+					if ($("#gamePage").is(".ui-page-active")) { 
+					console.log("unpausing");
+					paused = false;}
+					else if ($("#firstpage").is(".ui-page-active")) { paused =  true;}
+			});
+			
+		</script>
+		
+		<link rel="stylesheet" href="themes/A.min.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile.structure-1.4.2.min.css" />
+		
+		
+	</head>
+	
+	<body>
+	
+<div data-role="page" id="pageone">
+  <div data-role="header">
+    <h1>Project 2</h1>
+  </div>
+
+   <div data-role="main" class="ui-content" id="firstpage">
+    <a href="#gamePage" data-icon="arrow-r" data-role="button" data-inline="true" data-transition="flip" style="margin: auto !important" onclick="newGame();">  Start  </a>
+  </div>
+
+  <div data-role="footer" style="position: absolute; bottom: 0px; width: 100%;">
+    <h4> Developed by Quique Lores </h4>
+  </div>
+</div> 
+	
+<div data-role="page" id="gamePage">
+  <div data-role="header">
+				<h3 id="points">Score : 0</h3>
+				<a data-role="button" data-inline="true" style="float:right;" onclick="pauseGame();">Pause/Resume</a >
+				<a data-role="button" data-icon="home" data-inline="true" style="float:right;" onclick="window.location = './index.html';"> Home </a >
+
+  </div>	
+		<canvas id="canvas" style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px">
+		</canvas>
+</div>
+	
+	</body>
+</html>
+
+
+</body>
+</html>
